@@ -1,4 +1,5 @@
 library(data.table)
+
 if(!file.exists("project2.zip")) {
     download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip",
                   destfile = "project2.zip")
@@ -14,9 +15,11 @@ if(!exists("NEI_data")) {
 }
 
 library(dplyr)
+
 baltimore_data <- filter(NEI_data, fips == "24510")
 
 library(ggplot2)
+
 png("plot3.png", width = 480, height = 480)
 plot3 <- ggplot(baltimore_data, aes(factor(year), Emissions, fill = type)) +
     facet_grid(.~type) +

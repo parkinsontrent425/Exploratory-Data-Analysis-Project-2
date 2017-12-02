@@ -1,4 +1,5 @@
 library(data.table)
+
 if(!file.exists("project2.zip")) {
     download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip",
                   destfile = "project2.zip")
